@@ -1,0 +1,19 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Cache-control" content="public">
+<meta http-equiv="Cache-control" content="max-age=604800">
+<meta http-equiv="Content-Security-Policy" content="img-src 'self'; child-src 'none'; object-src 'self';"/>
+<meta name="description" content="dev00ps cliffnotes - catch the cliffnotes of life lessons in downloadable pdfs">
+<link rel="icon" href="/icons/icon.ico">
+
+{{ template "_internal/schema.html" . }}
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+
+{{ $cssmain := resources.Get "/css/main.css" }}
+{{ $cssideas := resources.Get "/css/ideas.css" }}
+{{ $cssbootstrap := resources.Get "/css/bootstrap.min.css" }}
+{{ $cssfontawesome1 := resources.Get "/fontawesome-6.3.0/css/fontawesome.css" }}
+{{ $cssfontawesome2 := resources.Get "/fontawesome-6.3.0/css/brands.css" }}
+{{ $cssfontawesome3 := resources.Get "/fontawesome-6.3.0/css/solid.css" }}
+{{ $allcss := slice $cssmain $cssideas $cssbootstrap $cssfontawesome1 $cssfontawesome2 $cssfontawesome3 | resources.Concat "/css/vendor.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $allcss.RelPermalink }}">
