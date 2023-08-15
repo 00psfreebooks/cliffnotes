@@ -1,0 +1,4 @@
+docs/
+.vscode/
+.hugo_build.lock
+resources/
